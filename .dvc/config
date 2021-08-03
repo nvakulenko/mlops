@@ -1,4 +1,6 @@
 [core]
-    remote = storage
+    remote = myremote
 ['remote "storage"']
     url = gdrive://1W164hqVvNmjsVhlMUOrNY-q0VhntdZKU
+['remote "myremote"']
+    url = gdrive://pets_dataset
