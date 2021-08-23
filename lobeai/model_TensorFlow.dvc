@@ -1,0 +1,5 @@
+outs:
+- md5: 1f16c8b7b0e55e8cfc89b61c4f34edb7.dir
+  size: 106957588
+  nfiles: 8
+  path: model_TensorFlow
