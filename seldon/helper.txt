@@ -19,6 +19,9 @@ kubectl delete -f seldon-deploy.yaml
 # set python home
 export PATH="$(pyenv root)/shims:$PATH"
 
+# test
+python3 my-model-client.py http://localhost:8000/api/v0.1/predictions Abissinian_1.jpg
+
 
 
 seldon-container-engine:
