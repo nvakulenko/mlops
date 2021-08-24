@@ -11,6 +11,20 @@
 --- I have tried auto-keras with their demo data sets, but couldn't transfrom our image data set to data set which can consume auto-keras
 
 # HW-2
--- 
+-- ML pipeline: /airflow/dags/1_machine_learning.py: train and export model to 'export.pkl'
+-- Manual: Build docker image with wrapped model 'export.pkl' in flask REST service: docker build . -t cats_dogs_rabbits_fastai_model_image 
+-- Verification pipeline: /airflow/dags/3_verification_pipeline.py
+	1. manually prepare images for verification and put them into /data/to_predict directory
+	2. from DAG: 
+		a. start docker image 'cats_dogs_rabbits_fastai_model_image' 
+		b. interare over .jpg images in /data/to_predict
+		c. put into /predicted/recognized/ folder images with prediction >= 90%
+		d. put into /predicted/unrecognized/ folder images with prediction < 90%
+-- Manually: label unrecognized images and put them into /data/training folder
+-- retrain model with /airflow/dags/1_machine_learning.py
+
 
 # HW-3
+-- Deploying with Seldon
+	1. Wrap 'export.pkl' in 
+	2. 
