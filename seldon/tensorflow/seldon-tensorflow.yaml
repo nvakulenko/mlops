@@ -3,19 +3,20 @@ kind: SeldonDeployment
 metadata:
   name: tfserving
 spec:
-  name: mnist
+  name: my-model
   predictors:
   - graph:
       children: []
       implementation: TENSORFLOW_SERVER
-      modelUri: gs://seldon-models/tfserving/mnist-model
-      name: mnist-model
+      #modelUri: gs://seldon-models/tfserving/mnist-model
+      modelUri: gs://drive.google.com/drive/folders/1Z8dPZ5VB87RTfJqhNvPrM7GpMg8BkqcK?usp=sharing
+      name: my-model
       parameters:
         - name: signature_name
           type: STRING
           value: predict_images
         - name: model_name
           type: STRING
-          value: mnist-model
+          value: my-model
     name: default
     replicas: 1
